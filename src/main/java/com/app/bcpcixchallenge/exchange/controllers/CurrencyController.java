@@ -2,7 +2,6 @@ package com.app.bcpcixchallenge.exchange.controllers;
 
 import com.app.bcpcixchallenge.exchange.dto.CurrencyDTO;
 import com.app.bcpcixchallenge.exchange.entities.Currency;
-import com.app.bcpcixchallenge.exchange.exceptions.CurrencyNotFoundRunTimeException;
 import com.app.bcpcixchallenge.exchange.services.ICurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("currencies")
+@RequestMapping("api/currencies") // TODO: Add base prefix and Version
 public class CurrencyController {
 
     @Autowired

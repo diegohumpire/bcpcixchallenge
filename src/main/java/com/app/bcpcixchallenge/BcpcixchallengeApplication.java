@@ -9,4 +9,6 @@ public class BcpcixchallengeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BcpcixchallengeApplication.class, args);
 	}
+
+	// TODO: Add base prefix and Version
 }

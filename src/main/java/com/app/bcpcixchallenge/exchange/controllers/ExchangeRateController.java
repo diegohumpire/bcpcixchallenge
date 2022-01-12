@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("exchange")
+@RequestMapping("api/exchange") // TODO: Add base prefix and Version
 public class ExchangeRateController {
 
 }

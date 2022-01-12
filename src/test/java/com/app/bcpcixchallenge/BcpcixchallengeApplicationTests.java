@@ -117,4 +117,6 @@ class BcpcixchallengeApplicationTests {
 		assertThat(UPDATED_CURRENCY).isNotEqualTo(NEW_CURRENCY);
 		assertThat(UPDATED_CURRENCY.getRate()).isNotEqualTo(NEW_CURRENCY.getRate());
 	}
+
+
 }
