@@ -22,7 +22,7 @@ public class ExchangeRate {
         this.base = "EUR";
     }
 
-    public BigDecimal convert(String from, String to, double amount) {
+    public ExchangeRateResponse convert(String from, String to, double amount) {
 
         // toUppercase
         from = from.toUpperCase();
@@ -42,7 +42,15 @@ public class ExchangeRate {
         // 2. Convert EUR to ARS
         BigDecimal fromBase = this.convertFromBase(toBase.doubleValue(), currencyTo);
 
-        return fromBase;
+        ExchangeRateResponse response = new ExchangeRateResponse();
+
+        response.setExchangeRate(this.getExchangeRate(currencyFrom, currencyTo));
+        response.setAmount(amount);
+        response.setFrom(currencyFrom.getCode());
+        response.setTo(currencyTo.getCode());
+        response.setAmountCalculated(fromBase);
+
+        return response;
     }
 
     // TODO: Get base dynamically
@@ -59,5 +67,9 @@ public class ExchangeRate {
         BigDecimal amountConverted = amountBig.multiply(to.getRate(), new MathContext(SCALE, RoundingMode.HALF_UP));
 
         return amountConverted;
+    }
+
+    public BigDecimal getExchangeRate(Currency from, Currency to) {
+        return to.getRate().divide(from.getRate(), SCALE, RoundingMode.HALF_UP);
     }
 }
