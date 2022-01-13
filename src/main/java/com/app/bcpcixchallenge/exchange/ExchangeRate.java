@@ -32,7 +32,7 @@ public class ExchangeRate {
         Currency currencyTo = this.currencyRepository.findByCode(to);
 
         if (currencyFrom == null || currencyTo == null) {
-            throw new CurrencyNotFoundRunTimeException();
+            throw new CurrencyNotFoundRunTimeException("Some currency code is not valid");
         }
 
         // Ex: PEN to ARS

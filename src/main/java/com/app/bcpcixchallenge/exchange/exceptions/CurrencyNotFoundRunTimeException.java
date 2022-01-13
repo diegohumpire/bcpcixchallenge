@@ -5,5 +5,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class CurrencyNotFoundRunTimeException extends RuntimeException {
+    public CurrencyNotFoundRunTimeException() {
+        super();
+    }
 
+    public CurrencyNotFoundRunTimeException(String message) {
+        super(message);
+    }
 }
