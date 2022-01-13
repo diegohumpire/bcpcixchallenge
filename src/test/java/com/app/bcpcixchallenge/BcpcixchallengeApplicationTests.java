@@ -26,7 +26,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.math.BigDecimal;
 
 @SpringBootTest
-@AutoConfigureMockMvc
+@AutoConfigureMockMvc(addFilters = false)
 class BcpcixchallengeApplicationTests {
 
 	@Autowired
