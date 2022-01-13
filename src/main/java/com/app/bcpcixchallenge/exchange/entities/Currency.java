@@ -1,8 +1,5 @@
 package com.app.bcpcixchallenge.exchange.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -46,5 +43,9 @@ public class Currency {
 
     public void setRate(BigDecimal rate) {
         this.rate = rate;
+    }
+
+    public String toString() {
+        return "Currency{ " + "rate=" + this.rate.stripTrailingZeros().toString() + "}";
     }
 }

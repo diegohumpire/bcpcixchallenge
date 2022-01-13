@@ -148,7 +148,7 @@ class BcpcixchallengeApplicationTests {
 						.content(this.objectMapper.writeValueAsString(requestContent))
 				)
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.amount", is("10")))
+				.andExpect(jsonPath("$.amount", is(10.0)))
 				.andExpect(jsonPath("$.from", is("PEN")))
 				.andExpect(jsonPath("$.to", is("ARS")));
 	}
